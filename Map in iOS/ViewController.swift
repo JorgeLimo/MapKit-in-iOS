@@ -24,7 +24,7 @@ class ViewController: UIViewController,MKMapViewDelegate {
         getToStart(ubicacion: location)
         
         
-        let marcador = Marcador(titulo: "Marcador 1", coordenada: location.coordinate)
+        let marcador = Marcador(titulo: "Marcador 1", coordenada: location.coordinate,subtitle: "Descripcion del marcador 1")
         mapa.addAnnotation(marcador)
         
         //let anotationView = MKAnnotationView()
@@ -64,6 +64,7 @@ class ViewController: UIViewController,MKMapViewDelegate {
     //Metodos de MKMapViewDelegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
         let  indentificador =  "marcador"
         
         var view: MKPinAnnotationView
@@ -75,12 +76,21 @@ class ViewController: UIViewController,MKMapViewDelegate {
             
             
         }else{
+            
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: indentificador)
             
-            view.canShowCallout = false
+            view.canShowCallout = true
             
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView!
+            //para mover el popup del marcador  de lugar
+            view.calloutOffset = CGPoint(x: 0, y: 0)
             
+            
+            
+            // para que el boton este al costado - 
+            //view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView!
+            // para que el boton este abajo - 
+            //view.detailCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView!
+
         }
         
         return view

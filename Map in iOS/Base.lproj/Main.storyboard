@@ -34,7 +34,7 @@
                                     <constraint firstItem="XMb-c9-ygY" firstAttribute="centerY" secondItem="hvp-mx-e9o" secondAttribute="centerY" id="sme-AH-OoP"/>
                                 </constraints>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-mD-dB5">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-mD-dB5">
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="IfF-ud-OCW"/>
                                 </connections>
